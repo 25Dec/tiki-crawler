@@ -1,0 +1,47 @@
+<section id="getProductsByCategory">
+  <form (ngSubmit)="getProductsByCategory()"
+        [formGroup]="myForm">
+    <div>
+      <label>Danh mục sản phẩm</label>
+      <p-treeselect
+        [options]="crawledCategories"
+        containerStyleClass="w-full"
+        formControlName="selectedCategory"
+        placeholder="Chọn danh mục"
+      />
+
+    </div>
+    <div>
+      <label>Số trang cần cào</label>
+      <p-inputnumber
+        [max]="100"
+        [min]="1"
+        formControlName="numberOfPagesToCrawl"
+        inputId="numberOfPagesToCrawl"
+        mode="decimal"
+        showButtons="true"
+      />
+    </div>
+    <p-button
+      *ngIf="!isWaitingForCrawling()"
+      [disabled]="myForm.invalid"
+      icon="pi pi-list"
+      label="Bắt đầu cào sản phẩm"
+      severity="secondary"
+      type="submit"
+    />
+    <p-button
+      *ngIf="isWaitingForCrawling()"
+      disabled
+      label="Bạn chờ một xíu nhé"
+      severity="secondary"
+    >
+      <i class="pi pi-spin pi-spinner"></i>
+    </p-button>
+  </form>
+
+  <app-actions-after-crawling
+    *ngIf="crawledProducts().length > 0"
+    [crawledProducts]="crawledProducts()"
+  />
+</section>

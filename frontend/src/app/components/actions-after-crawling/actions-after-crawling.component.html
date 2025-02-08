@@ -1,0 +1,76 @@
+<div id="actionsAfterCrawling">
+  <p-divider/>
+
+  <div id="actions">
+    <p-button
+      (click)="exportToJSON()"
+      icon="pi pi-code"
+      label="Xuất JSON"
+      variant="outlined"
+    />
+    <p-button
+      (click)="exportToCSV()"
+      icon="pi pi-file-excel"
+      label="Xuất CSV"
+      variant="outlined"
+    />
+    <p-button
+      (click)="showDialog()"
+      icon="pi pi-external-link"
+      label="Xem trước"
+      variant="outlined"
+    />
+  </div>
+
+  <p-dialog
+    [(visible)]="dialogVisible"
+    [contentStyle]="{ height: '300px' }"
+    [maximizable]="true"
+    [modal]="true"
+    [resizable]="false"
+    [style]="{ width: '90vw' }"
+    appendTo="body"
+  >
+    <p-table [scrollable]="true"
+             [tableStyle]="{ 'min-width': '100rem' }"
+             [value]="crawledProducts"
+             scrollHeight="flex">
+      <ng-template #header>
+        <tr>
+          <th>Thương hiệu/Tác giả</th>
+          <th>Tên sản phẩm</th>
+          <th>Đánh giá trung bình</th>
+          <th>Số lượng đánh giá</th>
+          <th>Số lượng đã bán</th>
+          <th>Giá hiện tại (VND)</th>
+          <th>Tỷ lệ giảm giá (%)</th>
+          <th>Giá gốc (VND)</th>
+        </tr>
+      </ng-template>
+      <ng-template #body
+                   let-product>
+        <tr>
+          <td>{{ product.brandOrAuthor }}</td>
+          <td>
+            <a [href]="product.productUrl"
+               target="_blank">{{ product.productName }}</a>
+          </td>
+          <td>
+            <p-rating [(ngModel)]="product.averageRating"
+                      [readonly]="true"/>
+          </td>
+          <td>{{ product.reviewCount }}</td>
+          <td>{{ product.soldQuantity }}</td>
+          <td>{{ product.currentPrice }}</td>
+          <td>{{ product.discountPercentage }}</td>
+          <td>{{ product.originalPrice }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <ng-template #footer>
+      <p-button (onClick)="dialogVisible = false"
+                icon="pi pi-check"
+                label="Ok"/>
+    </ng-template>
+  </p-dialog>
+</div>

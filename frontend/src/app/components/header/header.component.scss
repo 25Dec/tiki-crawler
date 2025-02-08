@@ -1,0 +1,21 @@
+header {
+  width: 90%;
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > ::ng-deep p-button button {
+    font-size: 2rem;
+  }
+
+  & > ::ng-deep p-selectbutton {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
