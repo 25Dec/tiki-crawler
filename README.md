@@ -13,8 +13,8 @@ Tiki Crawler là một ứng dụng hỗ trợ cào dữ liệu sản phẩm t�
   - Theo từ khóa (ví dụ: "cát mèo").
   - Theo danh mục ngành hàng (ví dụ: "Điện gia dụng").
 - **Xuất dữ liệu:**
-  - File `.json`.
-  - File `.csv`.
+  - File `.json`
+  - File `.csv`
 - **Tích hợp với Woocommerce:** Dữ liệu xuất ra được định dạng phù hợp để import vào Woocommerce.
 
 ## 📋 Hướng dẫn sử dụng
@@ -32,15 +32,17 @@ Tiki Crawler là một ứng dụng hỗ trợ cào dữ liệu sản phẩm t�
 
 ![Chọn định dạng xuất file](demo/export-options.png)
 
-- **Tải file về và import vào .**
+- **Tải file về và import vào Woocommerce.**
 
 ![Tải file](demo/files-downloaded.png)
 
-- Cấu trúc file `.json`
+![Import file](demo/import-into-wcm.png)
+
+- **Cấu trúc file `.json`**
 
 ![Cấu trúc file json](demo/jsonfile-structure.png)
 
-- Cấu trúc file `.csv`
+- **Cấu trúc file `.csv`**
 
 ![Cấu trúc file csv](demo/csvfile-structure.png)
 
