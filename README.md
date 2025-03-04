@@ -44,5 +44,11 @@ Tiki Crawler là một ứng dụng hỗ trợ cào dữ liệu sản phẩm t�
 
 ![Cấu trúc file csv](demo/csvfile-structure.png)
 
+## 🥲 Chức năng tương lai
+
+1. Cào dữ liệu từ các nền tảng khác như Shopee, Lazada, hoặc Sendo, cho phép người dùng so sánh giá và sản phẩm giữa các sàn.
+2. Cung cấp công cụ phân tích dữ liệu đã cào (ví dụ: xu hướng giá, sản phẩm bán chạy), hỗ trợ người dùng thương mại đưa ra quyết định kinh doanh.
+3. Gửi cảnh báo qua email hoặc Telegram khi giá sản phẩm giảm mạnh hoặc có sản phẩm mới trong danh mục/theo từ khóa đã chọn.
+
 ## License
 This project is licensed under the ISC License.
